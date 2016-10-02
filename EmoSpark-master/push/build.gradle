@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+
+android {
+    publishNonDefault true
+
+    compileSdkVersion project.compileSdkVersion
+    buildToolsVersion project.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion project.minSdkVersion
+        targetSdkVersion project.targetSdkVersion
+
+        versionCode 1
+        versionName "1.0"
+    }
+
+    productFlavors {
+        ibm {}
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile "com.google.android.gms:play-services:$playServicesVersion"
+
+    ibmCompile "com.ibm.mobilefirstplatform.clientsdk.android:push:1.0.2"
+}
+
+task("copyAarToFramework", type: Copy, dependsOn: 'assembleRelease', overwrite: true) {
+    if (project.hasProperty("FRAMEWORK_PATH")) {
+        def destPath = project.FRAMEWORK_PATH + '/modules/' + project.name + '/app/libs/'
+        from('build/outputs/aar')
+        into(destPath)
+        include(project.name + '-ibm-release.aar')
+        def file = file(destPath + project.name + '-ibm-release.aar')
+        logger.lifecycle("*** " + project.name + " file " + file.path)
+        def destName = file.name.replace("-release", "")
+        logger.lifecycle("Will be renamed to " + destName)
+        rename file.name, destName
+    }
+}

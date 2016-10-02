@@ -1,0 +1,44 @@
+apply plugin: 'com.android.library'
+
+android {
+    publishNonDefault true
+
+    compileSdkVersion project.compileSdkVersion
+    buildToolsVersion project.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion project.minSdkVersion
+        targetSdkVersion project.targetSdkVersion
+
+        versionCode 1
+        versionName "1.0"
+    }
+
+    productFlavors {
+        ibm {}
+
+        common {}
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    ibmCompile "com.ibm.mobile.foundation:ibmmobilefirstplatformfoundation:$ibmMfpVersion"
+    commonCompile "com.google.android.gms:play-services-analytics:$playServicesVersion"
+}
+
+task("copyAarToFramework", type: Copy, dependsOn: 'assembleRelease', overwrite: true) {
+    if (project.hasProperty("FRAMEWORK_PATH")) {
+        def destPath = project.FRAMEWORK_PATH + '/modules/' + project.name + '/app/libs/'
+        from('build/outputs/aar')
+        into(destPath)
+        include(project.name + '-*-release.aar')
+        rename '(.*)-release.aar', '$1.aar'
+    }
+}

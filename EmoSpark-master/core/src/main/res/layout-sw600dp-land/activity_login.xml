@@ -1,0 +1,112 @@
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@color/window_background"
+             android:gravity="center_vertical|center_horizontal">
+
+    <!-- Login progress -->
+    <ProgressBar
+            android:id="@+id/login_progress"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+    <ScrollView
+            android:id="@+id/login_form"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+        <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingBottom="@dimen/activity_margin_vertical"
+                android:paddingLeft="@dimen/activity_margin_horizontal"
+                android:paddingRight="@dimen/activity_margin_horizontal"
+                android:paddingTop="@dimen/activity_margin_vertical">
+
+            <LinearLayout
+                    android:id="@+id/app_name_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:src="@mipmap/ic_launcher"/>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/app_name"
+                        android:layout_margin="4dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/email_login_form"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                <EditText
+                        android:id="@+id/email"
+                        style="@style/SignInEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:hint="@string/prompt_email"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:nextFocusDown="@+id/password"
+                        android:singleLine="true"/>
+
+                <EditText
+                        android:id="@+id/password"
+                        style="@style/SignInEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/prompt_password"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:password="true"
+                        android:singleLine="true"/>
+
+                <Button
+                        android:id="@+id/email_sign_in_button"
+                        style="@style/SignInEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:background="@drawable/button_login_background"
+                        android:text="Log In"
+                        android:textColor="@color/textColor"
+                        android:textStyle="bold"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
+
+
+

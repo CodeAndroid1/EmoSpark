@@ -1,0 +1,41 @@
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:scrollbarStyle="outsideOverlay"
+>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:showDividers="middle"
+        android:divider="@drawable/divider"
+    >
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/emo5ds_quotes_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/FormField.EditLayout"
+        >
+            <EditText
+                android:id="@+id/emo5ds_quotes"
+                android:layout_width="match_parent"
+                android:layout_height="?listPreferredItemHeightSmall"
+                android:hint="Quotes"
+                style="@style/EditTextStyle"
+            >
+            </EditText>
+        </android.support.design.widget.TextInputLayout>
+        <ibmmobileappbuilder.views.ImagePicker
+            android:id="@+id/emo5ds_picture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:label="Picture"
+            app:index="0"
+        >
+        </ibmmobileappbuilder.views.ImagePicker>
+    </LinearLayout>
+</ScrollView>
+

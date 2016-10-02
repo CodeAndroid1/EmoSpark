@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+
+    <string name="app_name">IBM Mobile App Builder Android Framework</string>
+    <string name="drawer_open">Open main menu</string>
+    <string name="drawer_close">Close main menu</string>
+    <string name="drawer_title">Select a section</string>
+    <string name="detail">Detail</string>
+    <string name="loading">loading</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="share">Share</string>
+    <string name="send_email">Send Email</string>
+    <string name="call">Call with</string>
+    <string name="playsong">Play Song</string>
+    <string name="open_url">Open Link</string>
+    <string name="search_title">Search</string>
+    <string name="find_on_map">Find On Map</string>
+    <string name="selectOneItem">Select one item</string>
+    <string name="loading_message">Loading…</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+
+    <!-- Error strings -->
+    <string name="error_data_generic">Network error!</string>
+    <string name="error_data_unauthorized">Authorization Required</string>
+    <string name="error_invalid_email">This field is invalid</string>
+    <string name="error_incorrect_password">This field is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_login">Invalid Email or Password</string>
+    <string name="error_network_unavailable">No Internet Connection Available</string>
+
+    <!-- forms -->
+    <string name="filter">Filter</string>
+    <string name="reset">Reset</string>
+    <string name="minimum_date">From: select start date</string>
+    <string name="maximum_date">To: select end date</string>
+    <string name="select">Select</string>
+    <string name="datemin_filter_format">From: %1$s</string>
+    <string name="datemax_filter_format">To: %1$s</string>
+    <string name="select_date">Select date</string>
+    <string name="select_time">Select time</string>
+    <string name="items_deleted">Items deleted</string>
+    <string name="item_deleted">Item deleted</string>
+    <string name="item_created">Item created</string>
+    <string name="item_updated">Item updated</string>
+    <string name="correct_errors">Please, correct errors</string>
+    <string name="remove_items">Remove items</string>
+    <string name="remove_item">Delete</string>
+    <string name="latitude">latitude</string>
+    <string name="longitude">longitude</string>
+    <string name="get_my_location">Get my location</string>
+    <string name="not_set">Not set</string>
+    <string name="saving_changes">Saving changes</string>
+    <string name="no_items_found">No items found</string>
+    <string name="play_video">Play video</string>
+
+    <array name="image_picker_actions">
+        <item>Take a picture</item>
+        <item>Choose from gallery</item>
+        <item>Remove</item>
+    </array>
+
+</resources>

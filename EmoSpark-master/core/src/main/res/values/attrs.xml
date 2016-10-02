@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+    <attr name="label" format="string" localization="suggested"/>
+    <attr name="index" format="integer" />
+
+    <declare-styleable name="DateRangePicker">
+        <attr name="label"/>
+    </declare-styleable>
+
+    <declare-styleable name="DateTimePicker">
+        <attr name="label"/>
+    </declare-styleable>
+
+    <declare-styleable name="ListSelectionPicker">
+        <attr name="label"/>
+    </declare-styleable>
+
+    <declare-styleable name="DatePicker">
+        <attr name="label" />
+    </declare-styleable>
+
+    <declare-styleable name="TristateBooleanPicker">
+        <attr name="label" />
+    </declare-styleable>
+
+    <declare-styleable name="ImagePicker">
+        <attr name="label" />
+        <attr name="index" />
+    </declare-styleable>
+
+    <declare-styleable name="GeoPicker">
+        <attr name="label" />
+    </declare-styleable>
+
+</resources>

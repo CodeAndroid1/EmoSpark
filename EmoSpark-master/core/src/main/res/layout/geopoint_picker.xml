@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView android:id="@+id/label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/FormField.FormLabel"
+        android:layout_marginTop="@dimen/view_margin_vertical"
+        tools:text="Label" />
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingRight="@dimen/activity_margin_horizontal"
+        android:paddingLeft="@dimen/activity_margin_horizontal">
+
+        <EditText
+            android:id="@+id/latitude"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="?listPreferredItemHeightSmall"
+            android:hint="@string/latitude"
+            android:inputType="numberDecimal|numberSigned"
+            tools:text="@string/latitude"
+            style="@style/EditTextStyle" />
+
+        <EditText
+            android:id="@+id/longitude"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="?listPreferredItemHeightSmall"
+            android:layout_marginLeft="@dimen/view_margin_horizontal"
+            android:hint="@string/longitude"
+            android:inputType="numberDecimal|numberSigned"
+            tools:text="@string/longitude"
+            style="@style/EditTextStyle"/>
+
+        <ImageButton
+            android:id="@+id/my_location_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackground"
+            android:src="@android:drawable/ic_menu_mylocation"
+            android:hint="@string/get_my_location"
+            android:tint="@color/textColor"
+            />
+    </LinearLayout>
+
+    <TextView android:id="@+id/error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/FormField"
+        android:textAppearance="@style/TextAppearance.Design.Error"
+        tools:text="Error"
+        android:visibility="gone"/>
+
+</merge>
+

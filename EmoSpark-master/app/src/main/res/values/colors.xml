@@ -1,0 +1,36 @@
+
+<resources>
+    <!-- Customizations -->
+
+    <color name="textColor">#a90808</color>
+    <color name="textColorSecondary">#99a90808</color>
+    <color name="textColorMuted">#4da90808</color>
+    <color name="textBarColor">#fbf6f6</color>
+    <color name="window_background">#a32828</color>
+   
+    <!-- background drawable: be sure it has a not too large size/resolution -->
+    <drawable name="activity_background_image">@drawable/jpg_124e3c48e44a1f215254ea311c0eda36402</drawable>
+    
+    <!-- toolbar background -->
+    <color name="actionbar_background">#b84f4f</color>
+
+    <!-- status bar background (android 5.x) -->
+    <color name="primaryDark">#ff8c3838</color>
+    
+    <!-- list selections -->
+    <color name="selectionColor">#44a90808</color>
+
+    <!-- card style -->
+    <drawable name="background_card">@drawable/bg_dark_card</drawable>
+
+    <!-- card view -->
+    <color name="cardBackgroundColor">#99a32828</color>
+
+    <!-- icons -->
+    <drawable name="ic_device_access_call">@drawable/ic_device_access_call_light</drawable>
+    <drawable name="ic_location_web_site">@drawable/ic_location_web_site_light</drawable>
+    <drawable name="ic_location_place">@drawable/ic_location_place_light</drawable>
+    <drawable name="ic_content_email">@drawable/ic_content_email_light</drawable>
+
+</resources>
+

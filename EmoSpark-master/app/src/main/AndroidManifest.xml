@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ibm.mobileappbuilder.emospark20161001070745" >
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:name=".MyApplication">
+
+        <activity android:name="com.ibm.mobileappbuilder.emospark20161001070745.ui.Emo1DSItemFormActivity"
+            android:label="@string/emo1DSItemFormActivity"
+        />
+        <activity android:name="com.ibm.mobileappbuilder.emospark20161001070745.ui.Emo2DSItemFormActivity"
+            android:label="@string/emo2DSItemFormActivity"
+        />
+        <activity android:name="com.ibm.mobileappbuilder.emospark20161001070745.ui.Emo3DSItemFormActivity"
+            android:label="@string/emo3DSItemFormActivity"
+        />
+        <activity android:name="com.ibm.mobileappbuilder.emospark20161001070745.ui.Emo4DSItemFormActivity"
+            android:label="@string/emo4DSItemFormActivity"
+        />
+        <activity android:name="com.ibm.mobileappbuilder.emospark20161001070745.ui.Emo5DSItemFormActivity"
+            android:label="@string/emo5DSItemFormActivity"
+        />
+        <activity android:name="com.ibm.mobileappbuilder.emospark20161001070745.ui.EmoSparkMain"
+            android:label="@string/emoSparkMain"
+            android:theme="@style/AppTheme.Drawer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+      </activity>
+        <activity android:name="com.ibm.mobileappbuilder.emospark20161001070745.ui.EmoSparkActivity"
+            android:label="@string/emoSparkActivity"
+        />
+        <activity android:name="com.ibm.mobileappbuilder.emospark20161001070745.ui.CherishedActivity"
+            android:label="@string/cherishedActivity"
+        />
+        <activity android:name="com.ibm.mobileappbuilder.emospark20161001070745.ui.CherishedDetailActivity"
+        />
+        <activity android:name="com.ibm.mobileappbuilder.emospark20161001070745.ui.PeaceActivity"
+            android:label="@string/peaceActivity"
+        />
+        <activity android:name="com.ibm.mobileappbuilder.emospark20161001070745.ui.PeaceDetailActivity"
+        />
+        <activity android:name="com.ibm.mobileappbuilder.emospark20161001070745.ui.DepressedActivity"
+            android:label="@string/depressedActivity"
+        />
+        <activity android:name="com.ibm.mobileappbuilder.emospark20161001070745.ui.DepressedDetailActivity"
+        />
+        <activity android:name="com.ibm.mobileappbuilder.emospark20161001070745.ui.AngryActivity"
+            android:label="@string/angryActivity"
+        />
+        <activity android:name="com.ibm.mobileappbuilder.emospark20161001070745.ui.AngryDetailActivity"
+        />
+        <activity android:name="com.ibm.mobileappbuilder.emospark20161001070745.ui.FearActivity"
+            android:label="@string/fearActivity"
+        />
+        <activity android:name="com.ibm.mobileappbuilder.emospark20161001070745.ui.FearDetailActivity"
+        />
+        <activity android:name="com.worklight.wlclient.ui.UIActivity"/>
+    </application>
+
+</manifest>

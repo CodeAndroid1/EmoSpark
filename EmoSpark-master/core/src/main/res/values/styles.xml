@@ -1,0 +1,98 @@
+<resources>
+
+    <style name="ToolbarOverlayTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar"/>
+
+    <!-- fix background for dialog theme -->
+    <style name="SelectionDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="SelectionDialog.PreL">
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+
+    <style name="SelectionDialog.SearchView" parent="Base.Widget.AppCompat.SearchView">
+        <item name="android:editTextColor">@android:color/black</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <item name="colorPrimary">@android:color/black</item>
+        <item name="colorAccent">@android:color/black</item>
+        <item name="editTextColor">@android:color/black</item>
+
+        <!-- colors -->
+        <item name="android:textColorSecondary">@android:color/black</item>
+        <item name="colorControlHighlight">@android:color/black</item>
+        <item name="colorControlActivated">@android:color/black</item>
+    </style>
+
+    <style name="SelectionDialog.CheckedTextView">
+        <item name="android:checkMark">?android:attr/listChoiceIndicatorMultiple</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">?android:attr/listPreferredItemPaddingLeft</item>
+        <item name="android:paddingRight">?android:attr/listPreferredItemPaddingRight</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceListItemSmall</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <!-- base styles for the login form -->
+    <style name="SignInEditText" />
+
+    <!-- action mode background -->
+    <style name="ActionModeStyle" parent="@style/Widget.AppCompat.ActionMode">
+        <item name="background">@color/actionbar_background</item>
+    </style>
+
+    <!-- base style for all texts -->
+    <style name="TextStyle">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+
+    <!-- style for edits -->
+    <style name="EditTextStyle" parent="TextStyle">
+        <item name="android:inputType">textNoSuggestions</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="FormField">
+        <item name="android:paddingLeft">@dimen/activity_margin_horizontal</item>
+        <item name="android:paddingRight">@dimen/activity_margin_horizontal</item>
+    </style>
+
+    <style name="FormField.FormLabel">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Caption</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!-- form label without extra paddings (for using in complex layouts) -->
+    <style name="FormLabel">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Caption</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="FormField.FormValue">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="FormField.EditLayout">
+        <item name="android:paddingTop">@dimen/spacing_medium</item>
+        <item name="android:paddingBottom">@dimen/spacing_medium</item>
+    </style>
+
+    <style name="FormField.Switch">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Caption</item>
+        <item name="showText">false</item>
+        <item name="android:textColor">@color/textColorSecondary</item>
+    </style>
+
+    <style name="DatePicker">
+        <item name="android:paddingTop">@dimen/spacing_medium</item>
+        <item name="android:paddingBottom">@dimen/spacing_medium</item>
+    </style>
+
+    <style name="FormField.BooleanPicker" />
+
+    <style name="PickerSpinner" parent="@style/Widget.AppCompat.Spinner" />
+
+</resources>

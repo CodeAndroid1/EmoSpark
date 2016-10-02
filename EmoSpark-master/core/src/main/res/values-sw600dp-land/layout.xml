@@ -1,0 +1,18 @@
+
+
+<resources>
+
+    <!--
+    Layout alias to replace the single-pane version of the layout with a
+    two-pane version on Large screens.
+
+    For more on layout aliases, see:
+    http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
+    -->
+    <item name="fragment_listing" type="layout">@layout/fragment_grid</item>
+    <integer name="grid_columns">3</integer>
+    <integer name="grid_columns_3">4</integer>
+    <integer name="grid_columns_4">5</integer>
+    <bool name="tabletLayout">true</bool>
+
+</resources>

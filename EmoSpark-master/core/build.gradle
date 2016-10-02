@@ -1,0 +1,96 @@
+apply plugin: 'com.android.library'
+
+android {
+    publishNonDefault true
+
+    compileSdkVersion project.compileSdkVersion
+    buildToolsVersion project.buildToolsVersion
+    useLibrary 'org.apache.http.legacy'
+
+    defaultConfig {
+        minSdkVersion project.minSdkVersion
+        targetSdkVersion project.targetSdkVersion
+        versionCode 12
+        versionName "3.2.9"
+    }
+
+    productFlavors {
+        ibm {}
+
+        common {}
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+dependencies {
+    ibmCompile project(path: ':analytics', configuration: 'ibmRelease')
+    commonCompile project(path: ':analytics', configuration: 'commonRelease')
+
+    compile (
+            'com.squareup.okhttp:okhttp:2.5.0',
+            "com.android.support:appcompat-v7:$supportLibraryVersion",
+            "com.android.support:support-v4:$supportLibraryVersion",
+            "com.android.support:design:$supportLibraryVersion",
+            'com.squareup.retrofit:retrofit:1.9.0',
+            'com.squareup.picasso:picasso:2.5.2',
+            'com.doomonafireball.betterpickers:library:1.6.0'
+    )
+    testCompile('junit:junit:4.12',
+            'org.jmock:jmock-junit4:2.8.1',
+            'org.jmock:jmock:2.8.1',
+            'org.hamcrest:hamcrest-all:1.3',
+            'org.jmock:jmock-legacy:2.8.1',
+            'com.android.support.test.espresso:espresso-intents:2.2.1'
+    )
+}
+
+android.libraryVariants.all { variant ->
+
+    def varName = variant.name.capitalize()
+
+    task("copy${varName}Deps", type: Copy, dependsOn: "assemble${varName}") {
+        // Set out dir
+        def outProj = project.parent.subprojects.find { it.name == 'app' }
+        variant.outputs.each { output ->
+            def file = output.outputFile
+            if (file != null && file.name.endsWith(".aar")) {
+                from file
+                into new File(outProj.projectDir, 'libs')
+                def destName = file.name.replace("-release", "")
+                rename file.name, destName
+            }
+        }
+    }
+}
+
+task("copyAarToFramework", type: Copy, dependsOn: 'assembleRelease', overwrite: true) {
+    if (project.hasProperty("FRAMEWORK_PATH")) {
+        def destPath = project.FRAMEWORK_PATH + '/DomainProjects/app/libs/'
+        from('build/outputs/aar')
+        into(destPath)
+        include(project.name + '-ibm-release.aar')
+        def file = file(destPath + project.name + '-ibm-release.aar')
+        def destName = file.name.replace("-release", "")
+        rename file.name, destName
+    }
+}
+
+task("copySourceToFramework", type: Copy, dependsOn: 'copyAarToFramework', overwrite: true) {
+    if (project.hasProperty("FRAMEWORK_PATH")) {
+        def destPath = project.FRAMEWORK_PATH  + '/DomainProjects/' + project.name
+        delete destPath
+        from('.')
+        into(destPath)
+        exclude('**/*.iml', 'build/')
+    }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+    <!-- the background of grid items -->
+    <drawable name="grid_item_background">@drawable/background_card</drawable>
+
+    <!-- the background of list items -->
+    <drawable name="background_card">@drawable/bg_light_card</drawable>
+    <!-- background image for all activities -->
+    <drawable name="activity_background_image">@android:color/transparent</drawable>
+    <!-- The color will be override by the app -->
+    <color name="window_background">#000000</color>
+    <color name="textColor">#000000</color>
+    <color name="textColorSecondary">#000000</color>
+    <color name="textColorTertiary">#000000</color>
+    <color name="textColorMuted">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="actionbar_background">#ffcb412a</color>
+    <color name="textBarColor">#fffcfcfc</color>
+    <color name="primaryDark">#ffcb412a</color>
+    <color name="cardBackgroundColor">#99000000</color>
+    <color name="selectionColor">#99dfdfdf</color>
+</resources>

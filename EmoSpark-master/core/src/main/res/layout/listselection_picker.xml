@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView android:id="@+id/label"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              style="@style/FormField.FormLabel"
+            />
+
+    <TextView android:id="@+id/selection_value"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center_vertical"
+              android:textAppearance="?android:attr/textAppearanceSmall"
+              android:maxLines="1"
+              android:ellipsize="end"
+              android:hint="@string/select"
+              style="@style/FormField.FormLabel" />
+
+</merge>
+

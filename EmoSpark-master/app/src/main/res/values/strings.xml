@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+
+    <string name="app_name">EmoSpark</string>
+
+    <!-- Activity Titles -->
+    <string formatted="false" name="emo1DSItemFormActivity"></string>
+    <string formatted="false" name="emo2DSItemFormActivity"></string>
+    <string formatted="false" name="emo3DSItemFormActivity"></string>
+    <string formatted="false" name="emo4DSItemFormActivity"></string>
+    <string formatted="false" name="emo5DSItemFormActivity"></string>
+    <string formatted="false" name="emoSparkMain">EmoSpark</string>
+    <string formatted="false" name="emoSparkActivity">EmoSpark</string>
+    <string formatted="false" name="cherishedActivity">Cherished</string>
+    <string formatted="false" name="peaceActivity">Peace</string>
+    <string formatted="false" name="depressedActivity">Depressed</string>
+    <string formatted="false" name="angryActivity">Angry</string>
+    <string formatted="false" name="fearActivity">Fear</string>
+</resources>
+
+

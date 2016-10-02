@@ -1,0 +1,105 @@
+apply plugin: 'com.android.application'
+
+android {
+  compileSdkVersion project.compileSdkVersion
+  buildToolsVersion project.buildToolsVersion
+
+  defaultConfig {
+        minSdkVersion project.minSdkVersion
+        targetSdkVersion project.targetSdkVersion
+        versionCode Integer.parseInt(project.VERSION_CODE)
+        versionName project.VERSION_NAME
+
+        applicationId "com.ibm.mobileappbuilder.emospark20161001070745"
+        versionName "1.0"
+    }
+
+
+    signingConfigs{
+        debug{
+            storeFile file("debug.keystore")
+        }
+
+        release{
+            storeFile file(System.getenv("KEYSTORE") ?: "debug.keystore")
+            storePassword System.getenv("KEYSTORE_PASSWORD")
+            keyAlias System.getenv("KEY_ALIAS")
+            keyPassword System.getenv("KEY_PASSWORD")
+        }
+    }
+
+    buildTypes {
+        release {
+            // write here your signing config, proguard configuration, etc
+            // minifyEnabled true
+            // proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+
+            signingConfig signingConfigs.release
+        }
+    }
+
+    // This is used to rename the output apk
+    // comment this code if you don't want it
+    applicationVariants.all { variant ->
+        def versionCode = project.VERSION_CODE
+
+        variant.outputs.each { output ->
+            def file = output.outputFile
+            if(file != null && file.name.endsWith('.apk')) {
+                def newName = "${project.GROUP}-${versionCode}-${variant.name}.apk";
+                String outputDir = project.hasProperty('outDir') ? outDir : file.parent;
+                output.outputFile = new File(outputDir, newName)
+            }
+        }
+    }
+
+    packagingOptions {
+        // avoid conflicts in the packaging process
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude '.readme'
+        pickFirst 'META-INF/ASL2.0'
+        pickFirst 'META-INF/LICENSE'
+        pickFirst 'META-INF/NOTICE'
+    }
+
+    productFlavors {
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile(name:'core-ibm', ext:'aar')
+    //compile project(path: ':core', configuration: 'ibmRelease')
+
+    //Cloudant
+    compile(name:'cloudant', ext:'aar')
+    //compile project(path: ':cloudant')
+    compile 'com.cloudant:cloudant-sync-datastore-android:0.15.5'
+    //Cloudant
+    //compile project(path: ':analytics', configuration: 'commonRelease')
+    compile(name:'analytics-common', ext:'aar')
+
+    compile (
+      "com.android.support:support-v4:$supportLibraryVersion",
+      "com.android.support:gridlayout-v7:$supportLibraryVersion",
+      "com.android.support:appcompat-v7:$supportLibraryVersion",
+      "com.android.support:cardview-v7:$supportLibraryVersion",
+      "com.android.support:design:$supportLibraryVersion"
+    )
+
+    // transitive dependencies are not pulled from local .aar, so we must include all of them:
+	compile 'com.squareup.okhttp:okhttp:2.5.0'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.doomonafireball.betterpickers:library:1.6.0'
+}
+
+

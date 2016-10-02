@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_margin_horizontal">16dp</dimen>
+    <dimen name="activity_margin_vertical">16dp</dimen>
+    <dimen name="activity_margin">8dp</dimen>
+    <dimen name="card_margin_horizontal">8dp</dimen>
+    <dimen name="card_margin_top">4dp</dimen>
+    <dimen name="card_margin_bottom">6dp</dimen>
+    <dimen name="list_card_margin_top">8dp</dimen>
+    <dimen name="list_card_margin_bottom">10dp</dimen>
+    <dimen name="view_margin_vertical">4dp</dimen>
+    <dimen name="view_margin_horizontal">4dp</dimen>
+    <dimen name="grid_margin">8dp</dimen>
+    <dimen name="grid_menu_margin">6dp</dimen>
+    <dimen name="content_padding">4dp</dimen>
+
+    <!-- material design -->
+    <!-- elevations for material design -->
+    <dimen name="elevation_card">2dp</dimen>
+    <dimen name="elevation_fab">8dp</dimen>
+    <dimen name="elevation_toolbar">4dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="spacing_xsmall">2dp</dimen>
+    <dimen name="spacing_medium">8dp</dimen>
+    <dimen name="spacing_large">16dp</dimen>
+    <dimen name="spacing_xlarge">32dp</dimen>
+
+    <!-- FAB -->
+    <dimen name="fab_compat_margin">0dp</dimen>
+
+</resources>

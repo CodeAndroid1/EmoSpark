@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+
+    <!--
+        Generate an id for view containers
+    -->
+    <item name="progressContainer" type="id"/>
+    <item name="contentContainer" type="id"/>
+
+    <item name="action_refresh" type="id"/>
+    <item name="action_save" type="id" />
+</resources>

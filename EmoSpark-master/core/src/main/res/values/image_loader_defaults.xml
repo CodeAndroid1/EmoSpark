@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ima_il_placeholder">@android:color/transparent</color>
+    <drawable name="ima_il_error">@drawable/ic_ibm_placeholder</drawable>
+</resources>
